@@ -47,6 +47,22 @@ const substitutionModule = (function () {
         if (i !== z && cipher[i] == cipher[z]) return false;
       }
     }
+
+    const message = input
+      .split("")
+      .map((char) => {
+        if (encode) {
+          if (char === " ") return char;
+
+          return cipher[alphabet.indexOf(char)];
+        } else {
+          if (char === " ") return char;
+
+          return alphabet[cipher.split("").indexOf(char)];
+        }
+      })
+      .join("");
+    return message;
   }
 
   return {
