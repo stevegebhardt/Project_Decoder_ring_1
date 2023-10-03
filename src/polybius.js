@@ -84,7 +84,6 @@ const polybiusModule = (function () {
 
       let decodedMessage = "";
       for (let i = 0; i < input.length; i += 2) {
-        console.log(input[i]);
         if (input[i] === " ") {
           decodedMessage += input[i];
           i += 1;

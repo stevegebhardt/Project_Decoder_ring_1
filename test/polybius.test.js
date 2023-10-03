@@ -37,7 +37,7 @@ describe("polybius()", () => {
     });
 
     it("should translate 42 to both 'i' and 'j'", () => {
-      const message = "424222221351";
+      const message = "4432423352125413";
       const actual = polybius(message, false);
 
       expect(actual).to.include("i");
