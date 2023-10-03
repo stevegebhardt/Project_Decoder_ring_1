@@ -40,10 +40,11 @@ const caesarModule = (function () {
     // your solution code here
     //check value of shift
     //check whether to encode or decode the message
-    console.log("input", input);
+    // console.log("input", input);
     //guard clause for shift
     if (shift === 0 || shift < -25 || shift > 25) return false;
 
+    //account for decoding
     if (!encode) shift *= -1;
 
     //drop the input to lower case letters and split into array
@@ -53,10 +54,25 @@ const caesarModule = (function () {
       .map((letter) => {
         if (!alphabet.includes(letter)) return letter;
 
-        return (letter = alphabet[(alphabet.indexOf(letter) + shift) % 26]);
+        const index = alphabet.indexOf(letter);
+
+        let newIndex;
+        //handle if index is less than or past the alphabet
+        if (index + shift > 25) {
+          newIndex = index + shift - 26;
+        } else if (index + shift < 0) {
+          newIndex = index + shift + 26;
+        } else {
+          newIndex = index + shift;
+        }
+
+        return (letter = alphabet[newIndex]);
+
+        //only covered if index went off the deep end of the alphabet, not the shallow end
+        // return (letter = alphabet[(alphabet.indexOf(letter) + shift) % 26]);
       })
       .join("");
-    console.log("shiftedArray", shiftedArray);
+    // console.log("shiftedArray", shiftedArray);
     return shiftedArray;
   }
 
