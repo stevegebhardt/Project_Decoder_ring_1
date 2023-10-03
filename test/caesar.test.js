@@ -30,7 +30,7 @@ describe("caesar()", () => {
     });
   });
 
-  describe("encoding a message", () => {
+  describe("encoding", () => {
     it("should encode a message by shifting the letters", () => {
       const message = "hello";
       const shift = 3;
@@ -77,7 +77,7 @@ describe("caesar()", () => {
     });
   });
 
-  describe("decoding a message", () => {
+  describe("decoding", () => {
     it("should decode a message by shifting the letters in the opposite direction", () => {
       const message = "khoor";
       const shift = 3;

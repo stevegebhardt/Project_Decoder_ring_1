@@ -3,7 +3,7 @@ const { polybius } = require("../src/polybius");
 const { expect } = require("chai");
 
 describe("polybius()", () => {
-  describe("encoding a message", () => {
+  describe("encoding", () => {
     it("should encode a message by translating each letter to number pairs", () => {
       const message = "he";
       const actual = polybius(message);
@@ -27,7 +27,7 @@ describe("polybius()", () => {
       expect(actual).to.equal(expected);
     });
   });
-  describe("decoding a message", () => {
+  describe("decoding", () => {
     it("should decode a message by translating each pair of numbers into a letter", () => {
       const message = "32513251";
       const actual = polybius(message, false);
